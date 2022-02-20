@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+   <mime-type type="application/x-vettori">
+      <comment>Vettori source file</comment>
+      <comment xml:lang="en">Vettori source file</comment>
+      <glob pattern="*.vet"/>
+      <icon name="vettori_file"/>
+   </mime-type>
+</mime-info>

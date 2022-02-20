@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>908</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>300</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="3" rowspan="3">
+     <widget class="QWidget" name="DataArea" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>222</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="sizeIncrement">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="0" colspan="3">
+        <widget class="QListWidget" name="listVectors"/>
+       </item>
+       <item row="3" column="0" colspan="3">
+        <widget class="QListWidget" name="listPoints"/>
+       </item>
+       <item row="0" column="0" colspan="3">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Vectors</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::AutoText</enum>
+         </property>
+         <property name="scaledContents">
+          <bool>false</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="3">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Points</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="LegendBox">
+         <property name="text">
+          <string>Show Legend</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="ProjectionsBox">
+         <property name="text">
+          <string>Show Projections</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="GridBox">
+         <property name="text">
+          <string>Show Grid</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="1" rowspan="3" colspan="2">
+     <layout class="QVBoxLayout" name="MatplotArea"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>908</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew_File"/>
+    <addaction name="actionOpen_File"/>
+    <addaction name="actionSave_File"/>
+    <addaction name="actionSave_New"/>
+    <addaction name="separator"/>
+    <addaction name="actionExport_Image"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionAdd_Vector"/>
+    <addaction name="actionAdd_Point"/>
+    <addaction name="actionRemove_Vector"/>
+    <addaction name="actionRemove_Point"/>
+    <addaction name="separator"/>
+    <addaction name="actionGenerate_Sum_Vector"/>
+    <addaction name="actionGenerate_Subtract_Vector"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionAdd_Legend"/>
+    <addaction name="actionShow_Projections"/>
+    <addaction name="actionShow_Hide_Grid"/>
+    <addaction name="separator"/>
+    <addaction name="actionSet_Name"/>
+    <addaction name="actionSet_XLabel_Name"/>
+    <addaction name="actionSet_YLabel_Name"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionVersion"/>
+    <addaction name="actionInfo"/>
+    <addaction name="actionHelp"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionNew_File">
+   <property name="text">
+    <string>New File</string>
+   </property>
+   <property name="statusTip">
+    <string>Create a new file</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen_File">
+   <property name="text">
+    <string>Open File</string>
+   </property>
+   <property name="statusTip">
+    <string>Open a file in .vet format</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave_File">
+   <property name="text">
+    <string>Save File</string>
+   </property>
+   <property name="statusTip">
+    <string>Save the file if filename is different from None</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionSave_New">
+   <property name="text">
+    <string>Save New</string>
+   </property>
+   <property name="statusTip">
+    <string>Save a new file in .vet format</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionAdd_Vector">
+   <property name="text">
+    <string>Add Vector</string>
+   </property>
+   <property name="statusTip">
+    <string>Add a new vector in the plane</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionRemove_Vector">
+   <property name="text">
+    <string>Remove Vector</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove a vector from the plane</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+V</string>
+   </property>
+  </action>
+  <action name="actionGenerate_Sum_Vector">
+   <property name="text">
+    <string>Generate Sum Vector</string>
+   </property>
+   <property name="statusTip">
+    <string>Generate a vector sum from two vectors of the plane</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+V</string>
+   </property>
+  </action>
+  <action name="actionGenerate_Subtract_Vector">
+   <property name="text">
+    <string>Generate Subtract Vector</string>
+   </property>
+   <property name="statusTip">
+    <string>Generate a vector subtract from two vectors of the plane</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+S</string>
+   </property>
+  </action>
+  <action name="actionGenerate_Multiply_Vector">
+   <property name="text">
+    <string>Generate Multiply Vector</string>
+   </property>
+   <property name="statusTip">
+    <string>Multiply two vectors</string>
+   </property>
+   <property name="shortcut">
+    <string>*</string>
+   </property>
+  </action>
+  <action name="actionGenerate_Divided_Vector">
+   <property name="text">
+    <string>Generate Divided Vector</string>
+   </property>
+   <property name="statusTip">
+    <string>Divide two vectors</string>
+   </property>
+   <property name="shortcut">
+    <string>/</string>
+   </property>
+  </action>
+  <action name="actionAdd_Legend">
+   <property name="text">
+    <string>Show/Hide Legend</string>
+   </property>
+   <property name="statusTip">
+    <string>This enable or disable the legend (if is already enabled)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
+  </action>
+  <action name="actionAdd_Point">
+   <property name="text">
+    <string>Add Point</string>
+   </property>
+   <property name="statusTip">
+    <string>Add a new point in the plane</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionRemove_Point">
+   <property name="text">
+    <string>Remove Point</string>
+   </property>
+   <property name="statusTip">
+    <string>Remove a point from the plane</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
+   </property>
+  </action>
+  <action name="actionShow_Projections">
+   <property name="text">
+    <string>Show/Hide Projections</string>
+   </property>
+   <property name="statusTip">
+    <string>This enable or disable the projection (if they are already enabled)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionSet_Name">
+   <property name="text">
+    <string>Set Name</string>
+   </property>
+   <property name="statusTip">
+    <string>Set the name of the plane for your rappresentation</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="actionSet_XLabel_Name">
+   <property name="text">
+    <string>Set XLabel Name</string>
+   </property>
+   <property name="statusTip">
+    <string>Set the name of the x axis</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+X</string>
+   </property>
+  </action>
+  <action name="actionSet_YLabel_Name">
+   <property name="text">
+    <string>Set YLabel Name</string>
+   </property>
+   <property name="statusTip">
+    <string>Set the name of the y axis</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Y</string>
+   </property>
+  </action>
+  <action name="actionVersion">
+   <property name="text">
+    <string>Version</string>
+   </property>
+   <property name="statusTip">
+    <string>Show the version of Vettori</string>
+   </property>
+  </action>
+  <action name="actionInfo">
+   <property name="text">
+    <string>Info</string>
+   </property>
+   <property name="statusTip">
+    <string>Show information about vettori</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="text">
+    <string>Help</string>
+   </property>
+   <property name="statusTip">
+    <string>This can help you if you are new on vettori</string>
+   </property>
+  </action>
+  <action name="actionExport_Image">
+   <property name="text">
+    <string>Export Image</string>
+   </property>
+   <property name="statusTip">
+    <string>Export an image of your plane in .png format. Is already possible if you click in the floppy icon on the toolbar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionShow_Hide_Grid">
+   <property name="text">
+    <string>Show/Hide Grid</string>
+   </property>
+   <property name="statusTip">
+    <string>This enable or disable the grid (if is already enabled)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+G</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

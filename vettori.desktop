@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=0.2
+Name=Vettori
+Type=Application
+Comment=Physical rappresentation of vectors forces
+GenericName=Physical Graphic Designer 
+Exec=/usr/bin/vettori %U
+Icon=vettori
+StartupNotify=true
+#StartupWMClass=Vettori
+Categories=Math;Science;Education;
+MimeType=application/x-vettori;
